@@ -1,8 +1,8 @@
 {
   "husky": {
     "hooks": {
-      "pre-commit": "npm test && npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "tslint -c tslint.json -p tsconfig.json --fix",
+      "pre-push": "tslint -c tslint.json -p tsconfig.json --fix"
     }
   }
 }
