@@ -38,3 +38,6 @@ Thumbs.db
 
 # logs
 /logs/*.log
+
+# env
+.env

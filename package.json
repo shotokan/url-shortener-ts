@@ -11,8 +11,12 @@
     "format": "prettier --write \\\"src/**/*.ts\\\"",
     "build": "tsc",
     "start": "ts-node -r dotenv/config src/main.ts",
+    "start:dev": "nodemon",
     "start:debug": "node --inspect=9008 -r dotenv/config -r ts-node/register src/main.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart:prod": "npm run lint && rm -rf dist && tsc",
+    "start:prod": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix"
   },
   "repository": {
     "type": "git",
